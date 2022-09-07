@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&family=Oxygen+Mono&display=swap");
+
+:root {
+  --black: #171321;
+  --dkblue: #0d314b;
+  --plum: #4b0d49;
+  --hotmag: #ff17e4;
+  --magenta: #e310cb;
+  --aqua: #86fbfb;
+  --white: #f7f8fa;
+  --font-size: 1.3rem;
+  --mono: "Oxygen mono", monospace;
+  --sans: Oxygen, sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--sans);
+  background-color: var(--black);
+  color: var(--white);
+  font-size: var(--font-size);
+}
+
+p {
+  margin: 1em 0;
+}
+
+a {
+  color: var(--magenta);
+}
+
+a:hover {
+  color: var(--hotmag);
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* NavBar */
+
+nav {
+  font-family: var(--mono);
+  font-size: 80%;
+  padding: 4rem 1rem;
+}
+
+nav h1 a {
+  font-family: var(--sans);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav li:first-child {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+nav [class*="fa-"] {
+  color: var(--aqua);
+  font-size: 150%;
+}
+
+nav h1 [class*="fa-"] {
+  font-size: 100%;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+}
+
+nav a:hover,
+nav [class*="fa-"]:hover {
+  color: var(--magenta);
+}
+
+.button {
+  background-color: var(--magenta);
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--mono);
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.button:hover {
+  background-color: var(--hotmag);
+  color: var(--white);
+}
+
+/* intro styles */
+
+.intro {
+  padding: 4rem 1rem 10rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.intro .name {
+  font-family: var(--mono);
+}
+
+.intro .name span {
+  font-family: var(--sans);
+  font-size: 4rem;
+  color: var(--aqua);
+  display: block;
+}
+
+.intro h2 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+/* projects section */
+
+.section-blue {
+  background-color: var(--dkblue);
+}
+
+.projects {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: calc(2.5rem * 1.5);
+}
+
+.projects h3 {
+  color: var(--aqua);
+}
+
+.projects h4 {
+  font-size: 1rem;
+  font-family: var(--mono);
+}
+
+.blackbox {
+  background-color: var(--black);
+  padding: 1rem;
+  border-radius: 10px;
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.projects ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  font-size: 1rem;
+}
+
+.projects img {
+  border-top: 1px solid var(--aqua);
+  border-left: 1px solid var(--aqua);
+  margin: 2rem 0 4rem 0;
+  border-radius: 25px;
+  padding: 1rem;
+}
+
+/* Contact Section */
+
+.contact {
+  background-color: var(--plum);
+}
+
+.contact .content {
+  padding: 4rem 0;
+  max-width: 400px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.contact .content p:last-of-type {
+  margin-top: 3rem;
+}
+
+/* Gradient Line */
+
+.gradient {
+  display: flex;
+  height: 2px;
+  background-color: var(--hotmag);
+  background-image: linear-gradient(90deg, var(--hotmag), var(--aqua));
+}
+
+/* footer */
+
+footer {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+footer ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0;
+  font-size: 3rem;
+}
+
+footer p {
+  font-size: smaller;
+}
+
+/* media queries */
+
+@media (min-width: 550px) {
+  article {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1rem;
+  }
+
+  .projects img {
+    grid-column: 1/6;
+    grid-row: 1/2;
+  }
+
+  .text {
+    order: 2;
+    text-align: end;
+    grid-column: 5/11;
+    grid-row: 1/2;
+  }
+
+  .text ul {
+    justify-content: flex-end;
+  }
+
+  .reverse .text {
+    order: 1;
+    text-align: start;
+    grid-column: 1/7;
+  }
+
+  .reverse img {
+    grid-column: 6/11;
+  }
+
+  .reverse .text ul {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 850px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: start;
+    margin-right: auto;
+  }
+}
